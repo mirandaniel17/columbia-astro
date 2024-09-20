@@ -5,51 +5,211 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<div class="logo-link">
-			<a href="/" target="_blank">
-				<img src="/itc_logo_white.png" alt="itc_logo" width="85" class="mr-10">
-			</a>
-		</div>
-
-		<div class="internal-links">
-			<HeaderLink href="/">Inicio</HeaderLink>
-			<HeaderLink href="/about">¿Quiénes Somos?</HeaderLink>
-			<HeaderLink href="/blog">Cursos</HeaderLink>
-		</div>
+	  <div class="logo-link" class="logo">
+		
+		<a href="/" target="_blank">
+		  <img src="/itc_logo_white.png" alt="itc_logo" width="85" class="logo">
+		</a>
+	  
+	</div>
+  
+	  <div class="internal-links">
+		
+		<a href="/about">¿Quiénes Somos?</a>
+		<a href="/blog">Cursos</a>
+	  </div>
+  
+	  <!-- Botón de menú para dispositivos móviles -->
+	  <div class="menu-btn">
+		<i class="fa fa-bars"></i>
+	  </div>
 	</nav>
-</header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: linear-gradient(to bottom, rgb(17, 28, 34), rgb(19, 26, 36), rgb(23, 35, 45), rgb(41, 67, 83));
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	<!-- Menú desplegable para dispositivos móviles -->
+	<div class="menu">
+	  <div class="close-btn">
+		<i class="fa fa-times"></i>
+	  </div>
+	  <ul>
+		<li><a href="/">Inicio</a></li>
+		<li><a href="/about">¿Quiénes Somos?</a></li>
+		<li><a href="/blog">Cursos</a></li>
+	  </ul>
+	</div>
+  </header>
+  
+  <style>
+	* {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: Verdana, sans-serif;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
+  
+	body {
+	  min-height: 100vh;
+	  padding-top: 80px;
+	}
+  
+	header {
+		z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  padding: 20px 80px;
+  transition: 0.6s;
+  background: linear-gradient(to bottom, rgb(17, 28, 34), rgb(19, 26, 36), rgb(23, 35, 45), rgb(13, 162, 255));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 	}
 	nav {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+  display: flex;
+  justify-content: space-between; /* Asegura que haya espacio entre el logo y los enlaces */
+  align-items: center;
+  width: 100%; /* Se asegura de ocupar todo el ancho */
+  max-width: 1200px; /* Limita el ancho máximo del contenido del header */
+}
+  
+	header.down {
+	  background: rgba(20, 131, 213, 0.8); /* Transparente */
+	  padding: 15px 80px;
 	}
-	nav a {
+  
+	.logo-link {
+		display: flex;
+  align-items: center;
+  justify-content: center; /* Centra horizontalmente los enlaces */
+  flex-grow: 1;
+	}
+  
+	.logo {
+	  filter: drop-shadow(0px 7px 21px #1c6fe4);
+	  animation: rotar 5s linear infinite;
+	}
+  
+	.logo:hover {
+	  cursor: pointer;
+	}
+  
+	@keyframes rotar {
+	  from {
+		transform: rotateY(180deg);
+	  }
+	  to {
+		transform: rotateY(-180deg);
+	  }
+	}
+  
+	.internal-links {
+	  display: flex;
+	  align-items: center; /* Alineación vertical */
+	  justify-content: center; /* Alineación horizontal */
+	  flex-grow: 1; /* Ocupa el espacio disponible entre el logo y el menú */
+	}
+  
+	.internal-links a {
 		padding: 1.5em 0.5em;
-		color: #ffffff;
-		text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
 	}
-	nav a.active {
-		border-bottom-color: #ffffff;
-		text-decoration: underline;
+  
+	.internal-links a:hover {
+	  text-decoration: underline;
 	}
-	.logo-link,
-	.logo-link a {
-		display: flex;
+  
+	.menu-btn {
+	  display: none;
+	  font-size: 30px;
+	  cursor: pointer;
+	  color: #fff;
 	}
-	@media (max-width: 720px) {
-		.logo-link {
-			display: none;
-		}
+  
+	.menu {
+	  display: none;
+	  position: fixed;
+	  background: #1483D5;
+	  min-width: 330px;
+	  height: 100vh;
+	  top: 0;
+	  right: -100%;
+	  padding: 80px 50px;
+	  transition: 0.5s;
+	  transition-property: right;
+	}
+  
+	.menu.active {
+	  right: 0;
+	}
+  
+	.menu ul {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	}
+  
+	.menu ul li {
+	  list-style: none;
+	  margin: 20px 0;
+	}
+  
+	.menu a {
+	  color: #fff;
+	  font-weight: 600;
+	  text-transform: uppercase;
+	  font-size: 20px;
+	  text-decoration: none;
+	  padding: 10px 15px;
+	  border-radius: 20px;
+	  transition: 0.3s;
+	  transition-property: color, background;
+	}
+  
+	.menu a:hover {
+	  color: #000;
+	  background: #fff;
+	}
+  
+	.close-btn {
+	  position: absolute;
+	  top: 20px;
+	  right: 20px;
+	  font-size: 30px;
+	  cursor: pointer;
+	  color: #fff;
+	}
+  
+	/* Ocultar logo y hacer header transparente al hacer scroll */
+	html {
+	  scroll-behavior: smooth;
+	}
+  
+	body:has(header.down) header {
+	  background: transparent; /* Hacer transparente al hacer scroll */
+	}
+  
+	body:has(header.down) .logo {
+	  opacity: 0; /* Ocultar logo al hacer scroll */
+	  visibility: hidden;
+	  transition: visibility 0s 0.6s, opacity 0.6s linear; /* Transición para ocultar */
+	}
+  
+	@media (max-width: 991px) {
+	  header, header.down {
+		padding: 20px 40px;
+	  }
+  
+	  .internal-links {
+		display: none;
+	  }
+  
+	  .menu-btn {
+		display: block;
+	  }
 	}
 </style>
