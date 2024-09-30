@@ -4,222 +4,281 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav>
-	  <div class="logo-link" class="logo">
-		
-		<!--<a  target="_blank">
-		  <img src="/itc_logo_white.png" alt="itc_logo" width="85" class="logo">
-		</a> -->
-		<a href="#" target="_blank" class="logo-link">
-			<div class="logo"></div>
-		  </a>
-		  
-  <div class="logo"></div>
-</a>
+  <nav>
+    <div class="logo-link">
+      <div class="logo">
+          <a href="javascript:void(0);"><img src="itc_logo_white.png" alt="Logo"></a>
+      </div>
+  </div>
 
+    <label class="menu-btn" for="menu_hamburguesa">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </label>
+    <input class="menu_hamburguesa" type="checkbox" id="menu_hamburguesa">
 
-	</div>
+    <div class="internal-links" >
+      <ul class="ul_links">
+        
+       
+        <li ><a href="/about" class="link">¿Quiénes Somos?</a></li>
+        <li ><a href="/blog" class="link">Cursos</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script type="module">
+    // Incluir el JavaScript aquí, o en un archivo separado como `header.js`
+    let lastScrollTop = 0; 
+    const header = document.querySelector('header'); 
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            header.classList.add('header-hidden');
+        } else {
+            header.classList.remove('header-hidden');
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+</header>
+
   
-	  <div class="internal-links">
-		
-		<a href="/about">¿Quiénes Somos?</a>
-		<a href="/blog">Cursos</a>
-	  </div>
-  
-	  <!-- Botón de menú para dispositivos móviles -->
-	  <div class="menu-btn">
-		<i class="fa fa-bars"></i>
-	  </div>
-	</nav>
-	<!-- Menú desplegable para dispositivos móviles -->
-	<div class="menu">
-	  <div class="close-btn">
-		<i class="fa fa-times"></i>
-	  </div>
-	  <ul>
-		<!--<li><a href="/">Inicio</a></li> -->
-		<li><a href="/about">¿Quiénes Somos?</a></li>
-		<li><a href="/blog">Cursos</a></li>
-	  </ul>
-	</div>
-  </header>
   
   <style>
-	* {
-	  margin: 0;
-	  padding: 0;
-	  box-sizing: border-box;
-	  font-family: Verdana, sans-serif;
-	}
-  
-	body {
-	  min-height: 100vh;
-	  padding-top: 80px;
-	}
-  
-	header {
-		z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center;
-  padding: 20px 80px;
-  transition: 0.6s;
-  background: linear-gradient(to bottom, rgb(17, 28, 34), rgb(19, 26, 36), rgb(23, 35, 45), rgb(13, 162, 255));
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-	}
-	nav {
-  display: flex;
-  justify-content: space-between; /* Asegura que haya espacio entre el logo y los enlaces */
-  align-items: center;
-  width: 100%; /* Se asegura de ocupar todo el ancho */
-  max-width: 1200px; /* Limita el ancho máximo del contenido del header */
+:root {
+  --color_primario: #2756c3fd;
+  --color_primario_suave: #27b1c383;
+  --color_blanco: #fff;
+  --altura_header: 80px;
+  --padding_left_right: 2rem;
+  --ancho_maximo: 1200px;
 }
-  
-	header.down {
-	  background: rgba(20, 131, 213, 0.8); /* Transparente */
-	  padding: 15px 80px;
-	}
-  
-	.logo-link {
-		width: 95px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding-top: var(--altura_header);
+}
+
+header {
+  z-index: 999;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 80px; 
+    transition: opacity 0.3s, transform 0.3s; 
+    background: linear-gradient(to bottom, rgba(2,54,104,255), rgb(96,125,185,255), rgb(96,125,185,255),rgb(96,125,185,255));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-hidden {
+    opacity: 0; /* Oculta el header */
+    transform: translateY(-100%); /* Mueve el header hacia arriba */
+}
+@media (max-width: 767px) {
+    header {
+        padding: 10px 20px; /* Espaciado ajustado para móvil */
+    }
+}
+ul, ol {
+  list-style: none;
+}
+
+.menu_hamburguesa {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--ancho_maximo);
+  flex-wrap: wrap;
+  padding: 0 var(--padding_left_right);
+}
+
+.ul_links {
+  width: 100%;
+  background: linear-gradient(to bottom, rgb(96,125,185,255), rgb(96,125,185,255), rgb(96,125,185,255),rgb(96,125,185,255));
+  position: absolute;
+  top: var(--altura_header);
+  height: 0;
+  left: 0; /* Mantener el menú en su lugar al desplegar */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  transition: height 0.3s ease-in-out; /* Añadir transición para animación */
+}
+.ul_links {
+  width: 100%;
+  /*background: linear-gradient(to bottom,rgba(25, 92, 200, 0.985), rgb(110, 170, 253), rgb(152, 206, 250), rgba(148, 214, 255, 0.985));*/
+  position: absolute;
+  top: var(--altura_header);
+  height: 0;
+  left: 0; /* Mantener el menú en su lugar al desplegar */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  transition: height 0.3s ease-in-out; /* Añadir transición para animación */
+}
+
+.link {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu_hamburguesa:checked ~ .internal-links .ul_links {
+  height: calc(100vh - var(--altura_header));
+}
+
+.list_icon {
+  color: var(--color_blanco);
+  cursor: pointer;
+}
+
+.logo-link {
+  width: 95px;
   height: 95px;
   background-image: url('/itc_logo_white.png');
   background-size: cover;
   background-position: center;
-  filter: drop-shadow(0px 7px 21px #1c6fe4);
+  filter: drop-shadow(0px 7px 21px #76a8dd);
   animation: rotar 20s linear infinite;
-	}
-  
-	.logo {
-	  filter: drop-shadow(0px 7px 21px #1c6fe4);
-	  animation: rotar 5s linear infinite;
-	}
-  
-	.logo:hover {
-	  cursor: pointer;
-	}
-  
-	@keyframes rotar {
-	  from {
-		transform: rotateY(180deg);
-	  }
-	  to {
-		transform: rotateY(-180deg);
-	  }
-	}
-  
-	.internal-links {
-	  display: flex;
-	  align-items: center; /* Alineación vertical */
-	  justify-content: center; /* Alineación horizontal */
-	  flex-grow: 1; /* Ocupa el espacio disponible entre el logo y el menú */
-	}
-  
-	.internal-links a {
-		padding: 1.5em 0.5em;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+
+.internal-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.internal-links a {
+  padding: 1.5em 0.5em;
   color: #ffffff;
   text-decoration: none;
   margin-right: 20px;
   font-weight: 600;
   text-transform: uppercase;
-	}
-  
-	.internal-links a:hover {
-	  text-decoration: underline;
-	}
-  
-	.menu-btn {
-	  display: none;
-	  font-size: 30px;
-	  cursor: pointer;
-	  color: #fff;
-	}
-  
-	.menu {
-	  display: none;
-	  position: fixed;
-	  background: #1483D5;
-	  min-width: 330px;
-	  height: 100vh;
-	  top: 0;
-	  right: -100%;
-	  padding: 80px 50px;
-	  transition: 0.5s;
-	  transition-property: right;
-	}
-  
-	.menu.active {
-	  right: 0;
-	}
-  
-	.menu ul {
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	}
-  
-	.menu ul li {
-	  list-style: none;
-	  margin: 20px 0;
-	}
-  
-	.menu a {
-	  color: #fff;
-	  font-weight: 600;
-	  text-transform: uppercase;
-	  font-size: 20px;
-	  text-decoration: none;
-	  padding: 10px 15px;
-	  border-radius: 20px;
-	  transition: 0.3s;
-	  transition-property: color, background;
-	}
-  
-	.menu a:hover {
-	  color: #000;
-	  background: #fff;
-	}
-  
-	.close-btn {
-	  position: absolute;
-	  top: 20px;
-	  right: 20px;
-	  font-size: 30px;
-	  cursor: pointer;
-	  color: #fff;
-	}
-  
-	/* Ocultar logo y hacer header transparente al hacer scroll */
-	html {
-	  scroll-behavior: smooth;
-	}
-  
-	body:has(header.down) header {
-	  background: transparent; /* Hacer transparente al hacer scroll */
-	}
-  
-	body:has(header.down) .logo {
-	  opacity: 0; /* Ocultar logo al hacer scroll */
-	  visibility: hidden;
-	  transition: visibility 0s 0.6s, opacity 0.6s linear; /* Transición para ocultar */
-	}
-  
-	@media (max-width: 991px) {
-	  header, header.down {
-		padding: 20px 40px;
-	  }
-  
-	  .internal-links {
-		display: none;
-	  }
-  
-	  .menu-btn {
-		display: block;
-	  }
-	}
-</style>
+}
+
+.internal-links a:hover {
+  text-decoration: underline;
+}
+
+.menu-btn {
+  display: none; /* Ocultar por defecto */
+  position: absolute; /* Posición absoluta para ubicarlo a la derecha */
+  right: 20px; /* Espaciado desde la derecha */
+  top: 25px; /* Espaciado desde la parte superior */
+  font-size: 40px; /* Aumentar el tamaño del ícono de hamburguesa */
+  cursor: pointer;
+  color: #fff;
+}
+
+.menu-btn svg {
+  width: 40px; /* Aumentar el tamaño del ícono de hamburguesa */
+  height: 40px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+}
+
+@media (max-width: 991px) {
+  header, header.down {
+    padding: 20px 40px;
+  }
+
+  .internal-links {
+    display: none; /* Ocultar enlaces internos en vista móvil */
+  }
+
+  .menu-btn {
+    display: block; /* Mostrar botón de hamburguesa solo en móvil */
+  }
+
+  .menu_hamburguesa:checked ~ .internal-links {
+    display: block; /* Mostrar enlaces internos al marcar checkbox */
+  }
+
+  .ul_links {
+    left: 0; /* Mantener menú en posición correcta */
+    width: 100%; /* Asegurar que ocupe el ancho completo */
+  }
+
+  .labe_hamburguesa {
+    display: block; /* Mostrar botón hamburguesa en vista móvil */
+  }
+}
+
+@media (min-width: 767px) {
+  .labe_hamburguesa {
+    display: none; /* Ocultar botón hamburguesa en vista de escritorio */
+  }
+  .ul_links {
+    position: static;
+
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    gap: 2rem;
+    display: flex; /* Asegurar que el menú esté visible en pantallas grandes */
+    overflow: visible; /* Eliminar overflow hidden */
+	
+  }
+  .link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 25px;
+  transition:  color 0.3s; /* Añadido para suavizar el cambio de color */
+}
+}
+
+.link:hover {
+ /* background: linear-gradient(to bottom, rgb(8, 136, 204, 0.985), rgb(145, 179, 226), rgb(152, 206, 250), rgba(28, 136, 204, 0.985));
+  color: #000000; */
+}
+
+
+
+  </style>

@@ -2,29 +2,70 @@
 import Layout from '../layouts/BlogPost.astro';
 ---
 
-<Layout
-	title="¿Quiénes Somos?"
+<Layout title="¿Quiénes Somos?"
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('Septiembre 18 2024')}
 	heroImage="/panel1.png">
-	<p class="text-justify">
-		El Instituto Técnico Columbia es una institución educativa dedicada a la formación y capacitación de profesionales en diversas áreas técnicas y tecnológicas. Nos especializamos en ofrecer cursos de Ofimática y Diseño Gráfico, brindando a nuestros estudiantes las herramientas y conocimientos necesarios para destacar en el competitivo mundo laboral actual. Nuestro objetivo es formar personas competentes y preparadas para enfrentar los desafíos tecnológicos, impulsando su desarrollo personal y profesional. Con un enfoque práctico y actualizado, nuestros programas están diseñados para adaptarse a las necesidades del mercado y a las expectativas de nuestros estudiantes.
-	</p>
-	<h1 class="text-center">Misión</h1>
-	<hr class="my-6"/>
-	<p class="text-justify">
-		Nuestra misión es proporcionar educación de alta calidad en las áreas de Ofimática y Diseño Gráfico, capacitando a nuestros estudiantes con habilidades prácticas y conocimientos tecnológicos actualizados. Nos comprometemos a formar profesionales competentes y éticos que contribuyan de manera efectiva al desarrollo de la sociedad y al crecimiento del entorno laboral. Fomentamos un aprendizaje accesible, inclusivo e innovador, adaptado a las necesidades del mercado y orientado a maximizar el potencial de cada estudiante.
-	</p>
-	<h1 class="text-center">Visión</h1>
-	<hr class="my-6"/>
-	<p class="text-justify">
-		Ser el instituto técnico líder en la formación de profesionales en Ofimática y Diseño Gráfico, reconocido por nuestra excelencia académica, innovación educativa y compromiso con el éxito de nuestros estudiantes. Aspiramos a expandir nuestra oferta educativa, integrar nuevas tecnologías y metodologías de enseñanza, y establecer alianzas estratégicas que fortalezcan la empleabilidad y el impacto social de nuestros egresados a nivel nacional e internacional.
-	</p>
-	<h1 class="text-center">Instituto Técnico Columbia</h1>
-	<hr class="my-6"/>
-	<p class="text-center">
-		Certificación Otorgado por el Ministerio de Educación Resolución Ministerial 2886/17
-	</p>
+
+	 <section class="portafolio-contenedor" id="portafolio">
+        <div class="contener">
+            <div class="card">
+                <div class="face front">
+                    <img src="mision-sin-fondo.png">
+    
+                </div>
+                <div class=" face back">
+                    <h2>Estudiantes</h2>
+                    <p>
+                        Los años pasan volando y
+                        como los queremos disfrutar a tope
+                        queremos que te nos unas con tus amigos donde el
+                        100% de beneficios irán a parar con tu grupo
+                        en tu reino.
+                    </p>
+                    <div class="link">
+                        <a href="videojuejo.html">Juega</a>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face front">
+                    <img src="vision.png">
+    
+                </div>
+                <div class=" face back">
+                    <h2>Deportes</h2>
+                    <p>
+                        Nuestra vida entera es resolver rompecabezas.
+    
+                         
+                    </p>
+                    <div class="link">
+                        <a href="https://cubolivia.com/">Arma</a>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face front">
+                    <img src="students.png">
+    
+                </div>
+                <div class=" face back">
+                    <h2>Biblioteca</h2>
+                    <p>
+                        Si buscas la perfección nunca estarás contento (Anna Karenina, Leo Tolstoy)
+                    </p>
+                    <div class="link">
+                        <a href="https://www.bauldellibro.com/libros.php">Lee</a>
+    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 </Layout>
 
 

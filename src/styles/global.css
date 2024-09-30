@@ -152,3 +152,84 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.portafolio-contenedor {
+    background: linear-gradient(to bottom, rgba(2,54,104,255), rgb(96,125,185,255), rgb(96,125,185,255),rgb(96,125,185,255));
+    padding: 50px 0; /* Espaciado superior e inferior */
+}
+
+.contener {
+    display: flex;
+    justify-content: space-around; /* Espaciado entre las tarjetas */
+    flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en varias filas */
+}
+
+.card {
+    position: relative;
+    width: 350px; /* Ancho de cada tarjeta */
+    height: 450px; /* Alto de cada tarjeta */
+    margin: 40px; /* Espaciado entre tarjetas */
+    perspective: 1200px; /* Agregar perspectiva para la animación */
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Ocultar el lado posterior cuando gire */
+    border-radius: 10px; /* Esquinas redondeadas */
+    overflow: hidden; /* Ocultar el contenido que exceda */
+    transition: transform 0.5s; /* Suavizar la animación */
+}
+
+.card .front {
+    transform: perspective(400px) rotateY(0deg); /* Mostrar el frente */
+}
+
+.card .back {
+    transform: perspective(400px) rotateY(180deg); /* Mostrar la parte trasera girada */
+    background-color: #007BFF; /* Color de fondo para la parte trasera */
+    color: white; /* Color del texto en la parte trasera */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.card:hover .front {
+    transform: perspective(400px) rotateY(180deg); /* Girar el frente al pasar el mouse */
+}
+
+.card:hover .back {
+    transform: perspective(400px) rotateY(360deg); /* Girar la parte trasera al pasar el mouse */
+}
+
+.card img {
+    width: 100%; /* Asegurarse de que la imagen ocupe todo el ancho */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 10px; /* Esquinas redondeadas en la imagen */
+}
+
+.link {
+    margin-top: 10px; /* Espaciado superior para el enlace */
+}
+
+.link a {
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Sin subrayado en el enlace */
+}
+
+.link a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}

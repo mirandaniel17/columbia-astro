@@ -3,54 +3,230 @@ const today = new Date();
 import { SITE_TITLE } from '../consts';
 ---
 
-<footer>
-  <div class="footer-content">
-    <div class="container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-100">
-          <img src="/itc_logo_white.png" alt="itc_logo" width="40" class="rounded-full">
-          <span class="ml-5 text-xl text-white hover:text-white">{SITE_TITLE}</span>
-        </a>
-        <p class="mt-2 text-md text-gray-300">RM 2886/17 1056/23</p>
-      </div>
-      <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-3">CURSOS</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="text-gray-300 hover:text-white">Ofimática</a>
-            </li>
-            <li>
-              <a class="text-gray-300 hover:text-white">Diseño Gráfico</a>
-            </li>
-          </nav>
-        </div>
+<footer class="footer-area">
+  <div class="footer-wave-box">
+    <div class="footer-wave footer-animation" class="image-container">
+      <div ></div>
+      <img src="/image3.png" alt="Imagen de ola" class="wave-image"/>
+      
+    </div>
+  </div>
+  <div class="main">
+    <div class="single-footer">
+      <h4>Instituto Columbia</h4>
+      <p>Para crecer profecionalmente como en la vida te formaremos con nuetros cursos y carrera que te ofrecemos.</p>
+      <div class="footer-social">
+        <a href="#"><svg><!-- Facebook SVG --></svg></a>
+        <a href="#"><svg><!-- Twitter SVG --></svg></a>
+        <a href="#"><svg><!-- LinkedIn SVG --></svg></a>
       </div>
     </div>
-      <div class="container mx-auto flex flex-wrap flex-col sm:flex-row">
-        <p class="text-gray-400 text-sm text-center sm:text-left">© {today.getFullYear()} ITC</p>
-        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-		  <a class="ml-3 mb-2 text-gray-400 hover:text-white">
-            <svg fill="currentColor" width="16" height="16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 16 16">
-				<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-			</svg>
-		  </a>
-          <a class="ml-3 mb-2 text-gray-400 hover:text-white">
-            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-            </svg>
-          </a>
-        </span>
-      </div>
+    <div class="single-footer">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+       
+      </ul>
+    </div>
+    
+    <div class="single-footer">
+      <h4>Nuestros contactos</h4>
+      <a href="https://www.facebook.com/ColumbiaLaPazBolivia?locale=es_LA" class="social-link">
+        <p>Facebook</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+        </svg>
+    </a>
+    
+    <a href="https://api.whatsapp.com/send/?phone=59169764495&text=Cursos+de+Computaci%C3%B3n+y+Dise%C3%B1o+Gr%C3%A1fico+cual+te+interesa&type=phone_number&app_absent=0" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+    </svg><p>Whatsapp</p></a>
+    </div>
+    <div class="copy">
+      <p>&copy;2024 TODOS LOS DERECHOS RESERVADOS ITC</p>
+    </div>
   </div>
 </footer>
 
+
 <style>
-  footer {
-    background: linear-gradient(to bottom, rgb(17, 28, 34), rgb(19, 26, 36), rgb(23, 35, 45), rgb(41, 67, 83));
-    color: #ffffff;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.footer-area {
+    background-color: #007BFF; /* Color de fondo */
+    padding: 40px 0; /* Espaciado superior e inferior */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+75,7db9e8+100 */
+background: linear-gradient(to bottom,  rgb(96,125,185,255), rgb(96,125,185,255), rgb(96,125,185,255),rgb(96,125,185,255)); 
+color: #fff ;
+position: relative ;
+
+
+}
+
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo */
+    margin: auto; /* Centrar el footer */
+}
+.single-footer:first-child{
+  width:400px;
+}
+.p{
+  color: #e2f1f8;
+}
+.single-footer {
+    width: 230px; /* Ancho de cada sección del footer */
+    padding: 20px; /* Espaciado interior */
+}
+.social-link {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado en el enlace */
+    display: flex; /* Usar flexbox para alinear icono y texto */
+    align-items: center; /* Centrar verticalmente el icono y el texto */
+}
+
+.social-link svg {
+    margin-left: 5px; /* Espacio entre el texto y el icono */
+    fill: white; /* Color del icono */
+}
+
+
+
+
+.single-footer h4 {
+  color:#e2f1f8 ;
+  text-transform: capitalize;
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    font-size:22px ;
+    margin-bottom: 20px ;
+
+}
+
+.single-footer p {
+    margin-bottom: 10px; /* Espaciado debajo de los párrafos */
+}
+
+.single-footer ul {
+    list-style: none; /* Eliminar los puntos de lista */
+}
+
+.single-footer ul li {
+  color: #e2f1f8;
+    margin-bottom: 10px; 
+    position: relative;/* Espaciado entre los elementos de la lista */
+    padding-left: 20px;
+    text-decoration: none;
+
+}
+.single-footer ul li a {
+  color: #ffffff;
+  text-transform: capitalize;
+  text-decoration: navajowhite;
+
+}
+.single-footer ul li i {
+  position: absolute;
+  left: 0;
+  top: 5px;
+
+}
+
+
+.single-footer a {
+    text-decoration: none; /* Eliminar el subrayado de los enlaces */
+    color: #007BFF; /* Color de los enlaces */
+}
+
+.single-footer a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+.footer-social {
+  color: #ffffff;
+  border: 1p solid #ffffff;
+  width: 40px;
+  height: 40px;
+    display: inline-block; /* Usar flexbox para alinear iconos */
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px ;
+    gap: 10px; /* Espaciado entre iconos */
+}
+.image-container {
+    display: flex; /* Usar flexbox para alinear las imágenes */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    align-items: flex-end; /* Alinear las imágenes en la parte inferior */
+    margin-top: -30px; /* Ajustar el espacio según sea necesario */
+}
+.footer-social svg {
+    width: 20px; /* Tamaño de los iconos */
+    height: 20px;
+    fill: #007BFF; /* Color de los iconos */
+}
+
+.footer-social svg:hover {
+    fill: #0056b3; /* Color al pasar el ratón */
+}
+.footer-wave-box{
+  position: relative;
+  left: 0;
+  top:-40px;
+  right: 0;
+  height: 100px;
+  /*background-color: red;*/
+  position: relative; /* Para que los elementos hijos se posicionen en relación a este */
+  height: 100px; /* Ajusta la altura según necesites */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+.footer-wave{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150%;
+  height: 220%;
+  animation: wave-animation 8s linear infinite;
+  ransform: translateX(-25%); 
+
+}
+.footer-wave img {
+  width: 100%; /* Asegura que la imagen cubra todo el ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+  position: absolute; /* Permite la colocación precisa */
+  bottom: 0; /* Alinea la imagen en la parte inferior del contenedor */
+}.wave-img {
+  width: 100%; /* La imagen cubre todo el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  position: absolute;
+  bottom: 0; /* Coloca la imagen en la parte inferior del contenedor */
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
   }
-  .footer-content {
-    padding: 1em;
+  60% {
+    transform: translateX(-30%); /* Movimiento de la ola hacia la izquierda */
   }
+  500% {
+    transform: translateX(10%); /* Movimiento de la ola hacia la izquierda */
+  }
+}
+
+
+.popy{
+  text-align: center;
+  text-transform: capitalize;
+  margin-top:80px ;
+}
+
 </style>
